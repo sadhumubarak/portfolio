@@ -1,0 +1,43 @@
+{
+  "experience": [
+    {
+      "jobTitle": "Junior software developer",
+      "period": "2022 - Present",
+      "employer": "Valor Paytech Pvt.ltd",
+      "location": "Chennai."
+    },
+    {
+      "jobTitle": "Front-end developer",
+      "period": "2020 - 2022",
+      "employer": "H&H Technologies",
+      "location": "Trichy."
+    }
+  ],
+  "education": [
+    {
+      "course": "Master of computer application",
+      "year": "2017 - 2020",
+      "institute": "Jamal Mohamed College",
+      "location": "Trichy"
+    },
+    {
+      "course": "Bachelor of computer application",
+      "year": "2014 - 2017",
+      "institute": "Bharath Collge of Science and Management",
+      "location": "Thanjavur"
+    },
+    {
+      "course": "HSC",
+      "year": "2012 - 2014",
+      "institute": "Rajah's Higher Secondary School",
+      "location": "Thanjavur"
+    }
+  ],
+  "knowledge": [
+    { "title": "React", "level": "80%" },
+    { "title": "Node", "level": "60%" },
+    { "title": "Css", "level": "90%" },
+    { "title": "HTML", "level": "83%" },
+    { "title": "Photoshop", "level": "70%" }
+  ]
+}
