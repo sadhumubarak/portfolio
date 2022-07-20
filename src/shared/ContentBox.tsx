@@ -1,12 +1,22 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 
 type ContentBoxType = {
-    children: React.ReactNode
+  contentId?: string;
+  children: React.ReactNode;
 };
 
-export default function ViewPort({ children }: ContentBoxType) {
+export default function ViewPort({ children, contentId }: ContentBoxType) {
   return (
-    <Grid container sx={{ width: "80%", margin: "0 auto", minHeight: "100vh" }}>
+    <Grid
+      id={contentId}
+      container
+      sx={{
+        width: "80%",
+        margin: "0 auto",
+        minHeight: "90vh",
+        position: "relative",
+      }}
+    >
       {children}
     </Grid>
   );
