@@ -31,6 +31,15 @@ function App() {
       h6: {
         fontWeight: "700",
       },
+      subtitle1: {
+        fontFamily: "firacode",
+      },
+      subtitle2: {
+        fontFamily: "firacode",
+      },
+      body1: {
+        fontFamily: "firacode",
+      },
     },
     components: {
       MuiButton: {

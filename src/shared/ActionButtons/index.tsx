@@ -5,24 +5,37 @@ import { GiSkills } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 const navMenus = [
-  { menuTitle: "#viewport", iconName: <FaHome /> },
-  { menuTitle: "#experience", iconName: <FaSuitcase /> },
-  { menuTitle: "#education", iconName: <IoSchoolSharp /> },
-  { menuTitle: "#skill", iconName: <GiSkills /> },
+  { menuTitle: "#introduction", menu: "introduction", iconName: <FaHome /> },
+  { menuTitle: "#experience", menu: "experience", iconName: <FaSuitcase /> },
+  { menuTitle: "#education", menu: "education", iconName: <IoSchoolSharp /> },
+  { menuTitle: "#skill", menu: "skill", iconName: <GiSkills /> },
 ];
 
 type ContentBoxType = {
-  children: React.ReactNode;
+  activeMenu: string;
 };
 
-export default function NavPanel({ children }: ContentBoxType) {
+export default function NavPanel({ activeMenu }: ContentBoxType) {
   return (
     <Box
       sx={{
         position: "fixed",
-        top: "50%",
-        left: "40px",
-        transform: "translateY(-50%)",
+        top: { lg: "50%", xs: "unset" },
+        left: { lg: "40px", xs: "50%" },
+        bottom: { lg: "unset", xs: "0px" },
+        transform: { lg: "translateY(-50%)", xs: "translateX(-50%)" },
+        display: "flex",
+        flexDirection: { lg: "column", xs: "row" },
+        justifyContent: { lg: "unset", xs: "center" },
+        alignItems: { lg: "unset", xs: "center" },
+        backgroundColor: { lg: "transparent", xs: "#242540" },
+        zIndex: "9",
+        width: { lg: "unset", xs: "100%" },
+        padding: { lg: "unset", xs: "10px" },
+        boxShadow: {
+          xs: "0px -2px 4px -1px #00000033, 0px 4px 5px 0px #00000024, 0px 1px 10px 0px #0000001f",
+          lg: "none",
+        },
       }}
     >
       {navMenus.map((menu, i) => (
@@ -35,8 +48,19 @@ export default function NavPanel({ children }: ContentBoxType) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              border: "1px solid #dfdfdf",
-              marginBottom: "15px",
+              border: `${
+                menu.menu === activeMenu
+                  ? "1px solid #ffe118"
+                  : "1px solid #cccccc"
+              }`,
+              backgroundColor: `${
+                menu.menu === activeMenu ? "#ffde0036" : "transparent"
+              }`,
+              "& svg": {
+                color: `${menu.menu === activeMenu ? "#ffe118" : "#cccccc"}`,
+              },
+              marginBottom: { lg: "15px", xs: "unset" },
+              marginRight: "15px",
               "&:hover": {
                 borderColor: "#ffe118",
               },

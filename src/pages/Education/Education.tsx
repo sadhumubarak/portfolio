@@ -1,49 +1,45 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
-import ContentBox from "../shared/ContentBox";
+import ContentBox from "../../shared/ContentBox";
 import { FaUserGraduate } from "react-icons/fa";
+import SectionTitle from "../../shared/SectionTitle";
+import { GiSchoolBag, GiTiedScroll } from "react-icons/gi";
 type EduTypes = {
-  education: React.ReactNode;
+  education: {
+    course: string;
+    year: string;
+    institute: string;
+    location: string;
+  }[];
+  id: string;
 };
 
 export default function Education({ education }: EduTypes) {
   return (
     <ContentBox contentId="education">
       <Grid container sx={{ display: "flex", alignItems: "center" }}>
-        <Grid item sx={{ position: "absolute", top: "70px", left: "0" }}>
-          <Typography
-            variant="body1"
-            sx={{
-              position: "absolute",
-              // opacity: ".7",
-              fontSize: "6rem",
-              top: "-19px",
-              left: "0px",
-              color: "#575878",
-              zIndex: "2",
-              fontFamily: "Permanent Marker",
-            }}
-          >
-            03
-          </Typography>
-          <Typography
-            variant="h2"
-            sx={{ marginTop: "32px", marginLeft: "106px" }}
-          >
-            Education
-          </Typography>
-        </Grid>
+        <SectionTitle countNo="03" title="Education" />
         <Grid item xs={12}>
           <Grid container>
             {education.map((edu, i) => (
-              <Grid item xs={12} md={4} key={i} sx={{}}>
+              <Grid
+                item
+                xs={12}
+                md={12}
+                lg={4}
+                key={i}
+                sx={{ margin: { lg: "0 auto", md: "0 auto 40px" } }}
+              >
                 <Box
                   sx={{
                     width: "90%",
+                    height: "100%",
                     textAlign: "center",
                     position: "relative",
-                    boxShadow: "0 0 3px #dfdfdf",
+                    // boxShadow: "0 0 3px #dfdfdf",
+                    backgroundColor: "#353655",
                     margin: "0 auto",
                     borderRadius: "5px",
+                    padding: "20px 30px",
                   }}
                 >
                   <Box
@@ -59,9 +55,20 @@ export default function Education({ education }: EduTypes) {
                       left: "-5px",
                       top: "-25px",
                       transform: "translateX(-50%)",
+
+                      "& svg": {
+                        fontSize: "1.2rem",
+                        color: "#ffe118",
+                      },
                     }}
                   >
-                    <FaUserGraduate />
+                    {i === 0 ? (
+                      <GiTiedScroll />
+                    ) : i === 1 ? (
+                      <FaUserGraduate />
+                    ) : (
+                      <GiSchoolBag />
+                    )}
                   </Box>
                   <Grid item sx={{ paddingTop: "10px" }}>
                     <Typography variant="h6">{edu.course}</Typography>

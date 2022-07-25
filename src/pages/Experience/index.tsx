@@ -1,35 +1,54 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ContentBox from "../../shared/ContentBox";
 import { IoFootsteps } from "react-icons/io5";
-type Props = { experience: React.ReactNode };
+import SectionTitle from "../../shared/SectionTitle";
+// import expPoster from "../../assets/img/exp.png";
+type Props = {
+  experience: {
+    jobTitle: string;
+    period: string;
+    employer: string;
+    location: string;
+  }[];
+  id: string;
+};
 
-export default function ViewPort({ experience }: Props) {
+export default function ViewPort({ experience, id }: Props) {
   return (
-    <ContentBox contentId="experience">
-      <Grid container sx={{ display: "flex", alignItems: "center" }}>
-        <Grid item sx={{ position: "absolute", top: "70px", left: "0" }}>
-          <Typography
-            variant="body1"
-            sx={{
-              position: "absolute",
-              // opacity: ".7",
-              fontSize: "6rem",
-              top: "-19px",
-              left: "0px",
-              color: "#575878",
-              zIndex: "2",
-              fontFamily: "Permanent Marker",
-            }}
-          >
-            02
-          </Typography>
-          <Typography
-            variant="h2"
-            sx={{ marginTop: "32px", marginLeft: "106px" }}
-          >
-            Experience
-          </Typography>
-        </Grid>
+    <ContentBox contentId={id}>
+      {/* <Box
+        component="img"
+        src={{ expPoster }}
+        alt="expPoster"
+        sx={{
+          top: 0,
+          right: 0,
+          position: "absolute",
+          width: "100px",
+          height: "100%",
+          zIndex: "-1",
+          border: "none",
+        }}
+      /> */}
+      <Grid
+        container
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          // position: "relative",
+
+          // "&:after": {
+          //   content: "''",
+          //   top: 0,
+          //   right: 0,
+          //   position: "absolute",
+          //   width: "100%",
+          //   height: "100%",
+          //   backgroundImage: `url(${"../../"})`,
+          // },
+        }}
+      >
+        <SectionTitle countNo="02" title="Experience" />
         <Grid item xs={12}>
           <Grid container sx={{ marginBottom: "30px", height: "60px" }}>
             <Grid
@@ -79,6 +98,7 @@ export default function ViewPort({ experience }: Props) {
               sx={{
                 marginBottom: "30px",
                 height: "100px",
+                flexWrap: "nowrap",
                 "&:nth-child(2) .indicator:before": {
                   backgroundColor: "#ffe118",
                   animation: "blinker 1s linear infinite",
@@ -145,8 +165,8 @@ export default function ViewPort({ experience }: Props) {
                 <Typography variant="h6">
                   {exp.employer} ({exp.period})
                 </Typography>
-                <Typography variant="body2">{exp.jobTitle}</Typography>
-                <Typography variant="body2">{exp.location}</Typography>
+                <Typography variant="subtitle2">{exp.jobTitle}</Typography>
+                <Typography variant="subtitle2">{exp.location}</Typography>
               </Grid>
             </Grid>
           ))}

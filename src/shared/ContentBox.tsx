@@ -11,9 +11,9 @@ export default function ViewPort({ children, contentId }: ContentBoxType) {
       id={contentId}
       container
       sx={{
-        width: "80%",
+        width: { xs: "90%", lg: "80%" },
         margin: "0 auto",
-        minHeight: "90vh",
+        minHeight: "85vh",
         position: "relative",
       }}
     >

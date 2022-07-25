@@ -1,37 +1,16 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
-import ContentBox from "../shared/ContentBox";
+import ContentBox from "../../shared/ContentBox";
+import SectionTitle from "../../shared/SectionTitle";
 type knowledgeypes = {
-  knowledge: React.ReactNode;
+  knowledge: { title: string; level: string }[];
+  id: string;
 };
 
-export default function Knowledge({ knowledge }: knowledgeypes) {
+export default function Knowledge({ knowledge, id }: knowledgeypes) {
   return (
-    <ContentBox contentId="skill">
+    <ContentBox contentId={id}>
       <Grid container sx={{ display: "flex", alignItems: "center" }}>
-        <Grid item sx={{ position: "absolute", top: "70px", left: "0" }}>
-          <Typography
-            variant="body1"
-            sx={{
-              position: "absolute",
-              // opacity: ".7",
-              fontWeight: "normal",
-              fontSize: "6rem",
-              top: "-19px",
-              left: "0px",
-              color: "#575878",
-              zIndex: "2",
-              fontFamily: "Permanent Marker",
-            }}
-          >
-            04
-          </Typography>
-          <Typography
-            variant="h2"
-            sx={{ marginTop: "32px", marginLeft: "106px" }}
-          >
-            Skills
-          </Typography>
-        </Grid>
+        <SectionTitle countNo="04" title="Skills" />
         <Grid item xs={12}>
           {knowledge.map((item, i) => (
             <Grid

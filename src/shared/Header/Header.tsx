@@ -10,12 +10,12 @@ import {
 import { FaGithub } from "react-icons/fa";
 import { IoMail, IoMailOutline } from "react-icons/io5";
 
-type ContentBoxType = {
-  contentId?: string;
-  children: React.ReactNode;
-};
+// type ContentBoxType = {
+//   contentId?: string;
+//   children: React.ReactNode;
+// };
 
-export default function Header({ children, contentId }: ContentBoxType) {
+export default function Header() {
   return (
     <AppBar
       position="fixed"
@@ -37,9 +37,7 @@ export default function Header({ children, contentId }: ContentBoxType) {
             justifyContent: "space-between",
           }}
         >
-          <Grid item>
-            
-          </Grid>
+          <Grid item></Grid>
           <Grid item sx={{ display: "flex", alignItems: "center" }}>
             <Link
               href="https://github.com/"

@@ -12,12 +12,19 @@
 //   src: url('../src/assets/fonts/Gilroy-Regular.ttf') format('truetype');
 // }
 
+@font-face {
+  font-family: "firacode";
+  src: url('firacode.ttf');
+  src: local('firacode');
+  src: url('../src/assets/fonts/FiraCode/Fira\ Code\ Light\ 300.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   // font-family: 'Fira Code', monospace;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'firacode';
   // font-family: 'Montserrat', sans-serif;
 }
 
@@ -38,7 +45,7 @@ button {
 
   svg {
     font-size: 1.2rem;
-    color: #dfdfdf;
+    color: #cccccc;
   }
 }
 

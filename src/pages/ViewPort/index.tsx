@@ -1,14 +1,17 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ContentBox from "../../shared/ContentBox";
-type Props = {};
+type Props = {
+  id: string;
+};
 
-export default function ViewPort({}: Props) {
+export default function ViewPort({ id }: Props) {
   return (
-    <Grid container sx={{ height: "100vh" }} id="viewport">
+    <Grid container sx={{ height: "100vh" }} id={id}>
       <ContentBox>
         <Grid
           item
-          xs={6}
+          xs={12}
+          lg={6}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -19,10 +22,10 @@ export default function ViewPort({}: Props) {
         >
           <Box>
             <Typography
-              variant="body1"
+              variant="subtitle1"
               sx={{ fontFamily: "Fira Code, monospace" }}
             >
-              {/* Hi my name is */}
+              Hi my name is
             </Typography>
             {/* <Typography variant="h2">User Name</Typography> */}
             <Typography variant="subtitle1">
