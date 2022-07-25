@@ -4,7 +4,7 @@ import { IoSchoolSharp } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
-const navMenus = [
+export const navMenus = [
   { menuTitle: "#introduction", menu: "introduction", iconName: <FaHome /> },
   { menuTitle: "#experience", menu: "experience", iconName: <FaSuitcase /> },
   { menuTitle: "#education", menu: "education", iconName: <IoSchoolSharp /> },

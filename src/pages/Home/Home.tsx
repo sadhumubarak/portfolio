@@ -10,6 +10,8 @@ import NavPanel from "../../shared/ActionButtons";
 import Header from "../../shared/Header/Header";
 import Footer from "../../shared/Footer/Footer";
 import MediaPlayer from "../../shared/MediaPlayer/MediaPlayer";
+import ProgressLine from "../../shared/ProgressLine";
+
 // import useInteraction from "../../shared/useIntersection";
 type Props = {};
 
@@ -68,6 +70,7 @@ const Home = ({}: Props) => {
   return (
     <Fragment>
       <MediaPlayer />
+      <ProgressLine activeMenu={active}/>
       <Header />
       <NavPanel activeMenu={active} />
       <ViewPort id="introduction" />
