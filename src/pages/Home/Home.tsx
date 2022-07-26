@@ -13,6 +13,7 @@ import MediaPlayer from "../../shared/MediaPlayer/MediaPlayer";
 import ProgressLine from "../../shared/ProgressLine";
 import Projects from "../Projects";
 import Contact from "../Contact";
+import Loader from "../../shared/Loader/Loading";
 
 // import useInteraction from "../../shared/useIntersection";
 type Props = {};

@@ -1,7 +1,9 @@
-import "./App.scss";
+import { Suspense, lazy } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
+import Loader from "./shared/Loader/Loading";
+import "./App.scss";
+const Home = lazy(() => import("./pages/Home/Home"));
 function App() {
   const theme = createTheme({
     palette: {
@@ -61,11 +63,13 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
+      <Suspense fallback={<Loader />} >
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Router>
+      </Suspense>
     </ThemeProvider>
   );
 }

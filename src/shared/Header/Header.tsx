@@ -38,9 +38,11 @@ export default function Header() {
           }}
         >
           <Grid item>
-            <Typography variant="subtitle1" sx={{ color: "#ffe118" }}>
-              {" "}
-              &#60; Sadhamhussain /&#62;{" "}
+            <Typography
+              variant="subtitle1"
+              sx={{ fontSize: "1.25rem", color: "#ffe118" }}
+            >
+              &#60; Sadhamhussain /&#62;
             </Typography>
           </Grid>
           <Grid

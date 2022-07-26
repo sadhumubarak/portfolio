@@ -14,9 +14,10 @@ export default function Knowledge({ knowledge, id }: knowledgeypes) {
         <Grid item xs={12}>
           {knowledge.map((item, i) => (
             <Grid
-              container
               key={i}
               sx={{
+                display: "flex",
+                alingnItems: "center",
                 marginBottom: "25px",
                 alignItems: "center",
                 "&:last-child": {

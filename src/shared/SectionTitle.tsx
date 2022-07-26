@@ -21,7 +21,7 @@ export default function SectionTitle({ countNo, title }: SectionTitleType) {
       item
       sx={{
         // position: "relative",
-        paddingTop: "50px",
+        paddingTop: "80px",
         mb: "50px",
         left: "0",
         display: "flex",

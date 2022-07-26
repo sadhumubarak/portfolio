@@ -30,24 +30,7 @@ export default function ViewPort({ experience, id }: Props) {
           border: "none",
         }}
       /> */}
-      <Grid
-        container
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          // position: "relative",
-
-          // "&:after": {
-          //   content: "''",
-          //   top: 0,
-          //   right: 0,
-          //   position: "absolute",
-          //   width: "100%",
-          //   height: "100%",
-          //   backgroundImage: `url(${"../../"})`,
-          // },
-        }}
-      >
+      <Grid>
         <SectionTitle countNo="02" title="Experience" />
         <Grid item xs={12}>
           <Grid container sx={{ marginBottom: "30px", height: "60px" }}>
