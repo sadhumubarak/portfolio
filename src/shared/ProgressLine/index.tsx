@@ -22,22 +22,22 @@ export default function index({ activeMenu }: activeType) {
       }}
     >
       {navMenus.map((item, i) => (
-        <Box
-          sx={{
-            width: `${
-              item.menu === activeMenu ? "20px" : "10px"
-            }`,
-            height: "2px",
-            backgroundColor: `${
-              item.menu === activeMenu ? "#ffe118" : "#cccccc8f"
-            }`,
-            marginBottom: "10px",
-            cursor: "pointer",
-            // "&:nth-of-type(odd)": {
-            //   width: "20px",
-            // },
-          }}
-        ></Box>
+        <a href={item.menuTitle} key={i}>
+          <Box
+            sx={{
+              width: `${item.menu === activeMenu ? "20px" : "10px"}`,
+              height: "2px",
+              backgroundColor: `${
+                item.menu === activeMenu ? "#ffe118" : "#cccccc8f"
+              }`,
+              marginBottom: "10px",
+              cursor: "pointer",
+              // "&:nth-of-type(odd)": {
+              //   width: "20px",
+              // },
+            }}
+          ></Box>
+        </a>
       ))}
     </Box>
   );

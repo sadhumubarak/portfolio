@@ -11,12 +11,14 @@ import Header from "../../shared/Header/Header";
 import Footer from "../../shared/Footer/Footer";
 import MediaPlayer from "../../shared/MediaPlayer/MediaPlayer";
 import ProgressLine from "../../shared/ProgressLine";
+import Projects from "../Projects";
+import Contact from "../Contact";
 
 // import useInteraction from "../../shared/useIntersection";
 type Props = {};
 
 const Home = ({}: Props) => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("introduction");
 
   useEffect(() => {
     return () => {
@@ -25,10 +27,14 @@ const Home = ({}: Props) => {
         var eleExp = document.querySelector("#experience");
         var eleEdu = document.querySelector("#education");
         var eleKnow = document.querySelector("#skill");
+        var eleProj = document.querySelector("#projects");
+        var eleCon = document.querySelector("#contact");
         var positionIntro = eleIntro && eleIntro.getBoundingClientRect();
         var positionExp = eleExp && eleExp.getBoundingClientRect();
         var positionEdu = eleEdu && eleEdu.getBoundingClientRect();
         var positionKnow = eleKnow && eleKnow.getBoundingClientRect();
+        var positionProj = eleProj && eleProj.getBoundingClientRect();
+        var positionCon = eleCon && eleCon.getBoundingClientRect();
 
         // checking whether fully visible
         if (
@@ -59,6 +65,20 @@ const Home = ({}: Props) => {
         ) {
           setActive("skill");
         }
+        if (
+          positionProj &&
+          positionProj.top >= 0 &&
+          positionProj.bottom <= window.innerHeight
+        ) {
+          setActive("projects");
+        }
+        if (
+          positionCon &&
+          positionCon.top >= 0 &&
+          positionCon.bottom <= window.innerHeight
+        ) {
+          setActive("contact");
+        }
         // checking for partial visibility
         // if (positionEdu.top < window.innerHeight && positionExp.bottom >= 0) {
         //   setActive("");
@@ -70,13 +90,16 @@ const Home = ({}: Props) => {
   return (
     <Fragment>
       <MediaPlayer />
-      <ProgressLine activeMenu={active}/>
+      <ProgressLine activeMenu={active} />
       <Header />
       <NavPanel activeMenu={active} />
       <ViewPort id="introduction" />
       <Experience id="experience" experience={myData.experience} />
       <Education id="education" education={myData.education} />
       <Knowledge id="skill" knowledge={myData.knowledge} />
+      <Projects id="projects" />
+      <Contact id="contact" />
+
       <Footer />
     </Fragment>
   );

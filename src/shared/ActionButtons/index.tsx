@@ -9,6 +9,8 @@ export const navMenus = [
   { menuTitle: "#experience", menu: "experience", iconName: <FaSuitcase /> },
   { menuTitle: "#education", menu: "education", iconName: <IoSchoolSharp /> },
   { menuTitle: "#skill", menu: "skill", iconName: <GiSkills /> },
+  { menuTitle: "#projects", menu: "projects", iconName: <GiSkills /> },
+  { menuTitle: "#contact", menu: "contact", iconName: <GiSkills /> },
 ];
 
 type ContentBoxType = {
@@ -38,7 +40,7 @@ export default function NavPanel({ activeMenu }: ContentBoxType) {
         },
       }}
     >
-      {navMenus.map((menu, i) => (
+      {navMenus.slice(0, 4).map((menu, i) => (
         <a href={menu.menuTitle} key={i}>
           <Box
             className="nav-icon"

@@ -33,7 +33,7 @@ export default function SectionTitle({ countNo, title }: SectionTitleType) {
           height: "fit-content",
           position: "relative",
           // opacity: ".7",
-          fontSize: { xs: "3rem", lg: "5.5rem" },
+          fontSize: { xs: "3rem", lg: "5rem" },
           top: { xs: "-10px", lg: "-24px" },
           left: "15px",
           // left: "0px",
@@ -48,7 +48,7 @@ export default function SectionTitle({ countNo, title }: SectionTitleType) {
         variant="h2"
         sx={{
           height: "fit-content",
-          fontSize: { xs: "2.8rem", lg: "4.5rem" },
+          fontSize: { xs: "2.8rem", lg: "4rem" },
         }}
       >
         {title}

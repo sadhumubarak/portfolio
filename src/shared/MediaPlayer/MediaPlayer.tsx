@@ -6,7 +6,7 @@ export default function MediaPlayer() {
   const [song] = useState(new Audio(audioLoop));
 
   useEffect(() => {
-    song.volume = 0.3;
+    song.volume = 0.5;
     if (isPlay) {
       song.play();
     }
